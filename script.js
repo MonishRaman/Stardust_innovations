@@ -139,122 +139,131 @@ function move(){
 }
 function moveMercury(){
     var alpha = Math.PI*deltaMerc/180;
- 	$mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha)* verticalKaificent);
- 	$mercuryContainer.css('left', mercuryX + Rmercury * Math.cos(alpha));
-	mercury.css('transform','rotate(' + deltaMerc + 'deg)');
-	if (deltaMerc<180) {
-	 	$mercuryContainer.css('z-index', 11);
-	}else{
-		$mercuryContainer.css('z-index', 9);
-	}
- 	deltaMerc+=47.87/n;	
- 	if(deltaMerc>360){deltaMerc-=360;}
+    $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha)* verticalKaificent);
+    $mercuryContainer.css('left', mercuryX + Rmercury * Math.cos(alpha));
+    mercury.css('transform','rotate(' + deltaMerc + 'deg)');
+    if (deltaMerc<180) {
+        $mercuryContainer.css('z-index', 11);
+    } else {
+        $mercuryContainer.css('z-index', 9);
+    }
+    deltaMerc+=20/n;  // Reduced speed
+    if(deltaMerc>360){deltaMerc-=360;}
 }
+
 function moveVenus(){
     var alpha = Math.PI*deltaVenus/180;
- 	$venusContainer.css('top', venusY + Rvenus * Math.sin(alpha)* verticalKaificent);
- 	$venusContainer.css('left', venusX + Rvenus * Math.cos(alpha));
+    $venusContainer.css('top', venusY + Rvenus * Math.sin(alpha)* verticalKaificent);
+    $venusContainer.css('left', venusX + Rvenus * Math.cos(alpha));
 
-	venus.css('transform','rotate(' + deltaVenus + 'deg)');
-	if (deltaVenus<180) {
-	 	$venusContainer.css('z-index', 12);
-	}else{
-		$venusContainer.css('z-index', 8);
-	}
- 	deltaVenus+=35.02/n;	
- 	if(deltaVenus>360){deltaVenus-=360;}
+    venus.css('transform','rotate(' + deltaVenus + 'deg)');
+    if (deltaVenus<180) {
+        $venusContainer.css('z-index', 12);
+    } else {
+        $venusContainer.css('z-index', 8);
+    }
+    deltaVenus+=15/n;  // Reduced speed
+    if(deltaVenus>360){deltaVenus-=360;}
 }
+
 function moveEarth(){
     var alpha = Math.PI*deltaEarth/180;
- 	$earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha)* verticalKaificent);
- 	$earthMoonContainer.css('left', earthX + Rearth * Math.cos(alpha));
-	earth.css('transform','rotate(' + deltaEarth + 'deg)');
-	if ((deltaEarth<180)) {
-	 	$earthMoonContainer.css('z-index', 13);
-	}else{
-		$earthMoonContainer.css('z-index', 7);
-	}
- 	deltaEarth+=29.78/n;	
- 	if(deltaEarth>360){deltaEarth-=360;}
+    $earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha)* verticalKaificent);
+    $earthMoonContainer.css('left', earthX + Rearth * Math.cos(alpha));
+    earth.css('transform','rotate(' + deltaEarth + 'deg)');
+    if ((deltaEarth<180)) {
+        $earthMoonContainer.css('z-index', 13);
+    } else {
+        $earthMoonContainer.css('z-index', 7);
+    }
+    deltaEarth+=12/n;  // Reduced speed
+    if(deltaEarth>360){deltaEarth-=360;}
 }
+
 function moveMoon(){
     var alpha = Math.PI*deltaMoon/180;
- 	$moon.css('top', moonY + Rmoon * Math.sin(alpha)* verticalKaificent);
- 	$moon.css('left', moonX + Rmoon * Math.cos(alpha));
-	if (deltaMoon<180) {
-	 	$moon.css('z-index', 11);
-	}else{
-		$moon.css('z-index', 9);
-	}
- 	deltaMoon += 340/n;
- 	if(deltaMoon>360){deltaMoon-=360;}
+    $moon.css('top', moonY + Rmoon * Math.sin(alpha)* verticalKaificent);
+    $moon.css('left', moonX + Rmoon * Math.cos(alpha));
+    if (deltaMoon<180) {
+        $moon.css('z-index', 11);
+    } else {
+        $moon.css('z-index', 9);
+    }
+    deltaMoon += 170/n;  // Reduced speed
+    if(deltaMoon>360){deltaMoon-=360;}
 }
+
 function moveMars(){
     var alpha = Math.PI*deltaMars/180;
- 	$marsContainer.css('top', marsY + Rmars * Math.sin(alpha)* verticalKaificent);
- 	$marsContainer.css('left', marsX + Rmars * Math.cos(alpha));
-	mars.css('transform','rotate(' + deltaMars + 'deg)');
-	if (deltaMars<180) {
-	 	$marsContainer.css('z-index', 14);
-	}else{
-		$marsContainer.css('z-index', 6);
-	}
- 	deltaMars+=24.077/n;	
-	if(deltaMars>360){deltaMars-=360;}
+    $marsContainer.css('top', marsY + Rmars * Math.sin(alpha)* verticalKaificent);
+    $marsContainer.css('left', marsX + Rmars * Math.cos(alpha));
+    mars.css('transform','rotate(' + deltaMars + 'deg)');
+    if (deltaMars<180) {
+        $marsContainer.css('z-index', 14);
+    } else {
+        $marsContainer.css('z-index', 6);
+    }
+    deltaMars+=10/n;  // Reduced speed
+    if(deltaMars>360){deltaMars-=360;}
 }
+
 function moveJupiter(){
-	var obj = $('.jupiter_container').eq(0);	
+    var obj = $('.jupiter_container').eq(0);
     var alpha = Math.PI*deltaJupiter/180;
- 	$jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha)* verticalKaificent);
- 	$jupiterContainer.css('left', jupiterX + Rjupiter * Math.cos(alpha));
-	jupiter.css('transform','rotate(' + deltaJupiter + 'deg)');
-	if (deltaJupiter<180) {
-	 	$jupiterContainer.css('z-index', 15);
-	}else{
-		$jupiterContainer.css('z-index', 5);
-	}
-	deltaJupiter += 13.07/n;	
- 	if(deltaJupiter>360){deltaJupiter-=360;}
+    $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha)* verticalKaificent);
+    $jupiterContainer.css('left', jupiterX + Rjupiter * Math.cos(alpha));
+    jupiter.css('transform','rotate(' + deltaJupiter + 'deg)');
+    if (deltaJupiter<180) {
+        $jupiterContainer.css('z-index', 15);
+    } else {
+        $jupiterContainer.css('z-index', 5);
+    }
+    deltaJupiter += 5/n;  // Reduced speed
+    if(deltaJupiter>360){deltaJupiter-=360;}
 }
+
 function moveSaturn(){
     var alpha = Math.PI*deltaSaturn/180;
- 	$saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(alpha)* verticalKaificent);
- 	$saturnRingContainer.css('left', saturnX + Rsaturn * Math.cos(alpha));
-	saturn.css('transform','rotate(' + deltaSaturn + 'deg)');
- 	if (deltaSaturn<180){
-	 	$saturnRingContainer.css('z-index', 16);
-	}else{
-		$saturnRingContainer.css('z-index', 4);
-	}
- 	deltaSaturn += 9.69/n;	
-	if(deltaSaturn>360){deltaSaturn-=360;}
+    $saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(alpha)* verticalKaificent);
+    $saturnRingContainer.css('left', saturnX + Rsaturn * Math.cos(alpha));
+    saturn.css('transform','rotate(' + deltaSaturn + 'deg)');
+    if (deltaSaturn<180){
+        $saturnRingContainer.css('z-index', 16);
+    } else {
+        $saturnRingContainer.css('z-index', 4);
+    }
+    deltaSaturn += 4/n;  // Reduced speed
+    if(deltaSaturn>360){deltaSaturn-=360;}
 }
+
 function moveUranus(){
     var alpha = Math.PI*deltaUranus/180;
- 	$uranusContainer.css('top', uranusY + Ruranus * Math.sin(alpha)* verticalKaificent);
- 	$uranusContainer.css('left', uranusX + Ruranus * Math.cos(alpha));
-	uranus.css('transform','rotate(' + deltaUranus + 'deg)');
-	if (deltaUranus<180){
-	 	$uranusContainer.css('z-index', 17);
-	}else{
-		$uranusContainer.css('z-index', 3);
-	}
- 	deltaUranus+=6.81/n;	
-	if(deltaUranus>360){deltaUranus-=360;}
+    $uranusContainer.css('top', uranusY + Ruranus * Math.sin(alpha)* verticalKaificent);
+    $uranusContainer.css('left', uranusX + Ruranus * Math.cos(alpha));
+    uranus.css('transform','rotate(' + deltaUranus + 'deg)');
+    if (deltaUranus<180){
+        $uranusContainer.css('z-index', 17);
+    } else {
+        $uranusContainer.css('z-index', 3);
+    }
+    deltaUranus+=3/n;  // Reduced speed
+    if(deltaUranus>360){deltaUranus-=360;}
 }
+
 function moveNeptune(){
     var alpha = Math.PI*deltaNeptune/180;
- 	$neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(alpha)* verticalKaificent);
- 	$neptuneContainer.css('left', neptuneX + Rneptune * Math.cos(alpha));
-	uranus.css('transform','rotate(' + deltaNeptune + 'deg)');
-	if (deltaNeptune<180){
-	 	$neptuneContainer.css('z-index', 17);
-	}else{
-		$neptuneContainer.css('z-index', 3);
-	}
- 	deltaNeptune+=5.43/n;	
-	if(deltaNeptune>360){deltaNeptune-=360;}
+    $neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(alpha)* verticalKaificent);
+    $neptuneContainer.css('left', neptuneX + Rneptune * Math.cos(alpha));
+    uranus.css('transform','rotate(' + deltaNeptune + 'deg)');
+    if (deltaNeptune<180){
+        $neptuneContainer.css('z-index', 17);
+    } else {
+        $neptuneContainer.css('z-index', 3);
+    }
+    deltaNeptune+=2/n;  // Reduced speed
+    if(deltaNeptune>360){deltaNeptune-=360;}
 }
+
 function drawCircles(){
 	var mercuryCircle = $('.mercury_circle').eq(0);
 	mercuryCircle.css('left', width/2 - Rmercury);
