@@ -1,121 +1,70 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>	
+<!DOCTYPE html>
+<html lang="en">
 
-	<div class="content">
-		<div class="circles">
-			<div class="mercury_circle"></div>
-			<div class="venus_circle"></div>
-			<div class="earth_circle"></div>
-			<div class="mars_circle"></div>
-			<div class="saturn_circle"></div>
-			<div class="jupiter_circle"></div>
-			<div class="uranus_circle"></div>
-			<div class="neptune_circle"></div>
-		</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarDust Innovations Space App</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/fav/favicon-16x16.png">
+    <link rel="manifest" href="assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
-		<div id="planets">
-			<div class="planet sun">
-			</div>
-			<div class="mercury_container">
-					<div class="gif_mercury">
-					</div>
-					<div class="shadow_mercury">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-			<div class="venus_container">
-					<div class="gif_venus">
-					</div>
-					<div class="shadow_venus">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-			<div class="earth_moon_container">
-				<div class="earth_container">
-			   		<div class="gif_earth">
-						<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/earth_saibbo.gif">
-					</div>
-					<div class="shadow_earth">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-				</div>
-				<div class="moon_container">
-				
-			   		<div class="moon">
-			   			<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/moon_nqqsgu.gif">
-			   		</div>
-			   	</div>
-			</div>
-			<div class="mars_container">
-					<div class="gif_mars">
-					</div>
-					<div class="shadow_mars">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-			<div class="jupiter_container">
-					<div class="gif_jupiter">
-						<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
-					</div>
-					<div class="shadow_jupiter">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-			<div class="saturn_ring_container">
-				<div class="saturn_container">
-					<div class="gif_saturn">
-						<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/jupiter_cxhuh5.gif">
-					</div>
-					<div class="shadow_saturn">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-				</div>
-				<div class="ring_container">
-					<div class="gif_ring">
-						<div>
-							<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
-						</div>
-						<div>
-							<img src="https://res.cloudinary.com/yerevan/image/upload/v1484080037/ring_zofwhd.png">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="uranus_container">
-					<div class="gif_uranus">
-					</div>
-					<div class="shadow_uranus">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-			<div class="neptune_container">
-					<div class="gif_neptune">
-					</div>
-					<div class="shadow_neptune">
-						<div class="light"></div>
-						<div class="shadow"></div>
-					</div>
-			</div>
-		</div>
-	
-	<div class="controls">
-			<button id="stop">Stop</button>
-			<button id="start">Start</button>
-    <p>Grab and move mouse verticaly to change perspective</p>
-	</div>
+<body>
+    <header>
+        <nav>
+            <div class="brand">
+                <a href="#">
+                    <img src="assets/images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#" class="active">Home</a>
+                    <a href="solar.html">Solar System</a>
+                    <a href="about.html"> About US</a>
+                    <a href=""> </a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="search">
+                    <div>
+                        <img src="assets/images/search.png" alt="">
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="cta container">
+                <div class="left-section">
+                    <h1>Space by  <span style="font-weight: bold;"> StarDust Innovations </span></h1>
+                    <button onclick="window.location.href='solar.html'" class="btn btn-primary">Explore Solar System</button>
+                    <button onclick="window.location.href='m1.html'" class="btn btn-primary">Naming page</button>
+                    <button onclick="window.location.href='gg.html'" class="btn btn-primary">Nasa View</button>
+                </div>
+                <div class="right-section">
+                    <img src="assets/images/sat.png" alt="astronaut">
+                </div>
+            </div>
+        </section>
+    </header>
+    <script src="assets/js/main.js"></script>
+</body>
 
-	</div>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="script.js"></script>
-	</body>
 </html>

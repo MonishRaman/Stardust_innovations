@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Solar System Viewer</title>
+    <style>
+        /* Set the body's margin and padding to 0 for full-screen effect */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Use viewport height */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .iframe-container {
+            width: 100vw; /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            position: relative; /* For positioning child elements */
+        }
+
+        .iframe-container iframe {
+            width: 100vw; /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            border: none; /* Remove border for a seamless look */
+        }
+    </style>
+</head>
+<body>
+
+<div class="iframe-container">
+    <iframe src="https://eyes.nasa.gov/apps/solar-system/#/sc_jwst" allowfullscreen></iframe>
+</div>
+
+</body>
+</html>

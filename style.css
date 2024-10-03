@@ -6,20 +6,24 @@
 body{
 	position: relative;
 	cursor: -webkit-grab;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	height: 100vh; /* Ensures the body takes full height */
+	overflow: hidden; /* Prevents scrolling */
 }
 .content{
-	margin: auto;
-	width: 1400px;
-	height: 1200px;
-	background-color: #100020;
-	position: relative;
+	margin: 0; /* Remove margin */
+	width: 100vw; /* Full viewport width */
+	height: 100vh; /* Full viewport height */
+	background-color: #100020; /* Fallback background color */
 	background-image: url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg');
+	background-size: cover; /* Ensures background image covers the entire area */
+	background-position: center; /* Center the background image */
+	position: relative;
 }
 .content:before{
 	content: "";
@@ -474,4 +478,8 @@ button{
 	font-size: 25px;
 	padding: 10px 50px;
 	background-color: transparent;
+}
+.nasa-app {
+    margin-top: 20px; /* Space above the app */
+    text-align: center; /* Center the iframe */
 }
