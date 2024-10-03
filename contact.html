@@ -1,69 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="./assets/css/contact.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <title>iBlog - Heaven for bloggers</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Add your styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact Us | Space Explorers</title>
+    <style>
+        body {
+            background-color: #000d1f;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-header {
+            text-align: center;
+            padding: 5rem 0;
+            background: url('https://cdn.pixabay.com/photo/2019/10/28/10/51/galaxy-4586495_1280.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .contact-header h1 {
+            font-size: 3rem;
+        }
+
+        .contact-header p {
+            font-size: 1.3rem;
+        }
+
+        .contact-form-section {
+            display: flex;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+
+        .contact-form-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-box input, .form-box textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background-color: #0a1931;
+            color: white;
+            border: 1px solid #ffffff33;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-box input:focus, .form-box textarea:focus {
+            outline: none;
+            border: 1px solid #ffffffcc;
+        }
+
+        .form-box textarea {
+            height: 150px;
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #01a9ac;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-box button:hover {
+            background-color: #0196a0;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .contact-icons a {
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-icons a:hover {
+            color: #01a9ac;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+        }
+
+        .footer a {
+            color: #01a9ac;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-header p {
+                font-size: 1rem;
+            }
+
+            .form-box button {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navigation max-width-1 m-auto">
-        <div class="nav-left">
-            <a href="/">
-                <span><img src="img/logo.png" width="94px" alt=""></span>
-            </a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <form action="/search.html" method="get">
-                <input class="form-input" type="text" name="query" placeholder="Article Search">
-                <button class="btn">Search</button>
-            </form>
-
-        </div>
-
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/"><img src="img/logo.png" alt="Space Logo" width="100"></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+        </ul>
     </nav>
-    <div class="max-width-1 m-auto">
-        <hr>
-    </div>
-    <div class="contact-content font1 max-width-1 m-auto">
-        <div class="max-width-1 m-auto mx-1">
-            <h2>Feel Free to Contact Us</h2>
-            <div class="contact-form">
-                <div class="form-box">
-                    <input type="text" placeholder="Enter Your Name">
-                </div>
-                <div class="form-box">
-                    <input type="text" placeholder="Enter Your Phone Number">
-                </div>
-                <div class="form-box">
-                    <input type="text" placeholder="Enter Your Email Id">
-                </div>
-                <div class="form-box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="How may we help you?"></textarea>
-                </div>
-                <div class="form-box">
-                    <button class="btn">Submit</button>
-                </div>
 
+    <!-- Contact Header -->
+    <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you! Reach out to us for any space-related queries or collaborations.</p>
+    </div>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="contact-form-container">
+            <div class="form-box">
+                <input type="text" placeholder="Enter Your Name" required>
+            </div>
+            <div class="form-box">
+                <input type="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form-box">
+                <input type="text" placeholder="Enter Your Subject" required>
+            </div>
+            <div class="form-box">
+                <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <div class="form-box">
+                <button type="submit">Send Message</button>
             </div>
         </div>
+    </section>
 
+    <!-- Contact Icons -->
+    <div class="contact-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
- 
 
-   
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Space Explorers. All Rights Reserved.</p>
+        <p><a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a></p>
+    </footer>
 
-    <div class="footer">
-        <p>Copyright &copy; StarDust Innovations </p>
-         <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a> 
-    </div>
 </body>
+
 </html>
