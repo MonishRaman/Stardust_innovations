@@ -1,0 +1,678 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+body.night-mode {
+  background-color: #000;
+  overflow: hidden; /* Prevent scrolling due to stars */
+}
+
+body.night-mode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5) url('../images/background.png') repeat; /* Increased alpha to 0.5 */
+  z-index: -1; /* Keep it behind other elements */
+}
+
+body.night-mode::before {
+  animation: twinkle 2s infinite; /* Adjust duration as needed */
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+body.day-mode {
+  background-color: #87ceeb;
+}
+
+.solar-system {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.sun img {
+  width: 100px;
+  height: 100px;
+  animation: rotateSun 60s linear infinite;
+}
+
+@keyframes rotateSun {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+body.night-mode .orbit {
+  border: 1px dashed rgb(199, 199, 199) /* Black border in night mode */
+}
+
+body.day-mode .orbit {
+  border: 1px dashed black /* White border in day mode */
+}
+
+.earth-orbit {
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+  animation: orbitEarth 20s linear infinite;
+}
+
+.mars-orbit {
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+  margin-top: -200px;
+  animation: orbitMars 30s linear infinite;
+}
+
+.jupiter-orbit {
+  width: 550px;
+  height: 550px;
+  margin-left: -275px;
+  margin-top: -275px;
+  animation: orbitJupiter 40s linear infinite;
+}
+
+.nea-orbit {
+  width: 650px;
+  height: 650px;
+  margin-left: -325px;
+  margin-top: -325px;
+  animation: orbitNEA 15s linear infinite;
+}
+
+.comet-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  margin-left: -300px;
+  margin-top: -300px;
+  animation: rotateComet 50s linear infinite;
+}
+
+.pha-orbit {
+  width: 850px;
+  height: 850px;
+  margin-left: -425px;
+  margin-top: -425px;
+  animation: orbitPHA 35s linear infinite;
+}
+
+.planet,
+.celestial-body {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation: rotatePlanet 20s linear infinite;
+}
+
+#earth {
+  width: 44px;
+  height: 44px;
+}
+
+#mars {
+  width: 54px;
+  height: 54px;
+}
+
+#jupiter {
+  width: 74px;
+  height: 74px;
+}
+
+.planet img,
+.celestial-body img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.celestial-body img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.comet {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.comet img {
+  width: 88px;
+  height: 58px;
+  filter: brightness(2);
+  cursor: pointer;
+}
+
+.comet-tail {
+  position: absolute;
+  top: 50%;
+  left: 48px;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to right,
+      rgba(255, 0, 0, 0.5),
+      rgba(255, 255, 255, 0));
+  transform: translateY(-50%);
+  animation: cometTailFade 1.5s infinite;
+}
+
+.meteor-shower {
+  position: absolute;
+  width: 3px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  animation: meteorFall 2s infinite linear;
+}
+
+@keyframes meteorFall {
+  from {
+    top: -50px;
+    left: 0;
+  }
+
+  to {
+    top: 100vh;
+    left: 100vw;
+  }
+}
+
+/* Orbit Animations */
+@keyframes orbitEarth {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes orbitMars {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes orbitJupiter {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes orbitNEA {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes orbitPHA {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotateComet {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Control Panel Container */
+.control-panel-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  background: rgba(20, 20, 30, 0.95);
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+/* Control Panel Title */
+.control-panel h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
+}
+
+
+.control-panel-container .control-panel button {
+  color: white;
+}
+/* Form Group */
+.control-panel label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.control-panel input[type="range"],
+.control-panel select {
+  width: 100%;
+  margin-bottom: 20px;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: #444;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.control-panel input[type="range"]:hover {
+  background: #555;
+}
+
+/* Range Slider Thumb */
+.control-panel input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0056ec;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(9, 105, 214, 0.6);
+}
+
+.control-panel input[type="range"]::-webkit-slider-thumb:hover {
+  background: #0056ec;
+  transform: scale(1.2);
+}
+
+.control-panel input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0056ec;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(9, 105, 214, 0.6);
+}
+
+.control-panel input[type="range"]::-moz-range-thumb:hover {
+  background: #0056ec;
+  transform: scale(1.2);
+}
+
+/* Checkbox Styles */
+.control-panel input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #444;
+  border: 2px solid #0056ec;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.control-panel input[type="checkbox"]:checked {
+  background: #0056ec;
+  border-color: #0056ec;
+}
+
+.control-panel input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.control-panel input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+/* Buttons */
+.control-panel button {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 15px;
+  background: #0056ec;
+  border: none;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.control-panel button:hover {
+  background: #0056ec;
+  transform: translateY(-2px);
+}
+
+.control-panel button:active {
+  background: #0051dc;
+  transform: translateY(0);
+}
+
+/* Select Dropdown */
+.control-panel select {
+  background: #444;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.control-panel select:hover {
+  background: #555;
+}
+
+.control-panel select:focus {
+  outline: none;
+  background: #555;
+}
+
+/* Analytics Section */
+#analytics {
+  background: rgba(30, 30, 40, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#analytics p {
+  margin: 0;
+}
+
+#analytics span {
+  color: #0056ec;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .control-panel-container {
+    width: 90%;
+    right: 5%;
+    top: 10px;
+    padding: 20px 15px;
+  }
+
+  .control-panel h4 {
+    font-size: 1.3rem;
+  }
+
+  .control-panel button {
+    font-size: 0.95rem;
+  }
+
+  #analytics {
+    font-size: 0.8rem;
+  }
+}
+
+.hazard-sign {
+  position: absolute;
+  top: 5%;
+  /* Adjust to position above the asteroid */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Center the sign */
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  /* Adjust size as needed */
+  background: red;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  /* Triangle shape */
+  animation: glow 1.5s infinite alternate;
+}
+
+.hazard-sign::before,
+.hazard-sign::after {
+  content: '';
+  position: absolute;
+  background: red;
+}
+
+.hazard-sign::before {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  /* Rotate to form a diamond shape */
+}
+
+.hazard-sign::after {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-45deg);
+  /* Rotate to form a diamond shape */
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.7;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+
+}
+
+.speed {
+  position: absolute;
+  bottom: 60px; /* Position it at the bottom of the planet */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color:white; /* Text color */
+  padding: 5px 10px; /* Padding for the box */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow effect */
+  font-size: 10px; /* Font size */
+  text-align: center; /* Center text */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.planet:hover .speed {
+  transform: translateX(-50%) scale(1.1); /* Slightly scale up on hover */
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px); /* Subtle blur effect */
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: #34495e; /* Dark blue-gray */
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 600px;
+  color: #ecf0f1; /* Light gray */
+  animation: slideIn 0.3s ease;
+}
+
+.close {
+  color: #ecf0f1; /* Light gray */
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #e67e22; /* Carrot orange */
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1); /* Slight grow effect */
+}
+
+#planet-title {
+  color: #e74c3c; /* Red */
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-align: center; /* Centered title */
+}
+
+#planet-description {
+  color: #bdc3c7; /* Silver */
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px; /* Space below description */
+}
+
+
+#planet-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 2px solid #e67e22; /* Carrot orange border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    margin: 5% auto;
+    padding: 20px;
+  }
+
+  .close {
+    font-size: 26px;
+  }
+
+  #planet-title {
+    font-size: 22px;
+  }
+
+  #planet-description {
+    font-size: 14px;
+  }
+}
