@@ -118,14 +118,24 @@ function spacePosition(){
   neptuneContainer.style.top = (height/2 - neptuneContainer.offsetHeight /2 ) + 'px';
   neptuneContainer.style.left = (width/2 - neptuneContainer.offsetWidth /2 + Rneptune ) + 'px';
 }
-var start =  document.getElementById('start');
+/*var start = document.getElementById('start');
 start.onclick = function(){
-	timerId = setInterval(move, 20);
+    timerId = setInterval(move, 20); // Starts the planets' movement
+
+    // Play the background audio
+    var audio = document.getElementById('background-audio');
+    audio.play();
 };
-var stop =  document.getElementById('stop');
+
+var stop = document.getElementById('stop');
 stop.onclick = function(){
-	clearInterval(timerId);
+    clearInterval(timerId); // Stops the planets' movement
+
+    // Pause the background audio
+    var audio = document.getElementById('background-audio');
+    audio.pause();
 };
+
 function move(){
 	moveEarth();
 	moveMercury();
@@ -136,7 +146,45 @@ function move(){
 	moveUranus();
 	moveNeptune();
 	moveMoon();	
+}*/
+
+var timerId;  // Global timerId variable
+
+var start = document.getElementById('start');
+start.onclick = function() {
+    // Only start if the timer is not already running
+    if (!timerId) {
+        timerId = setInterval(move, 20); // Starts the planets' movement
+    }
+
+    // Play the background audio
+    var audio = document.getElementById('background-audio');
+    audio.play();
+};
+
+var stop = document.getElementById('stop');
+stop.onclick = function() {
+    clearInterval(timerId); // Stops the planets' movement
+    timerId = null;  // Reset timerId to allow restart
+
+    // Pause the background audio
+    var audio = document.getElementById('background-audio');
+    audio.pause();
+};
+
+// Function to move planets (as already implemented)
+function move(){
+    moveEarth();
+    moveMercury();
+    moveVenus();
+    moveMars();
+    moveJupiter();
+    moveSaturn();
+    moveUranus();
+    moveNeptune();
+    moveMoon();    
 }
+
 function moveMercury(){
     var alpha = Math.PI*deltaMerc/180;
     $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha)* verticalKaificent);
@@ -147,7 +195,7 @@ function moveMercury(){
     } else {
         $mercuryContainer.css('z-index', 9);
     }
-    deltaMerc+=5/n;  // Further reduced speed
+    deltaMerc+=5.5/n;  // Slightly increased speed
     if(deltaMerc>360){deltaMerc-=360;}
 }
 
@@ -155,14 +203,13 @@ function moveVenus(){
     var alpha = Math.PI*deltaVenus/180;
     $venusContainer.css('top', venusY + Rvenus * Math.sin(alpha)* verticalKaificent);
     $venusContainer.css('left', venusX + Rvenus * Math.cos(alpha));
-
     venus.css('transform','rotate(' + deltaVenus + 'deg)');
     if (deltaVenus<180) {
         $venusContainer.css('z-index', 12);
     } else {
         $venusContainer.css('z-index', 8);
     }
-    deltaVenus+=3/n;  // Further reduced speed
+    deltaVenus+=3.5/n;  // Slightly increased speed
     if(deltaVenus>360){deltaVenus-=360;}
 }
 
@@ -171,12 +218,12 @@ function moveEarth(){
     $earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha)* verticalKaificent);
     $earthMoonContainer.css('left', earthX + Rearth * Math.cos(alpha));
     earth.css('transform','rotate(' + deltaEarth + 'deg)');
-    if ((deltaEarth<180)) {
+    if (deltaEarth<180) {
         $earthMoonContainer.css('z-index', 13);
     } else {
         $earthMoonContainer.css('z-index', 7);
     }
-    deltaEarth+=2/n;  // Further reduced speed
+    deltaEarth+=2.5/n;  // Slightly increased speed
     if(deltaEarth>360){deltaEarth-=360;}
 }
 
@@ -189,7 +236,7 @@ function moveMoon(){
     } else {
         $moon.css('z-index', 9);
     }
-    deltaMoon += 80/n;  // Further reduced speed
+    deltaMoon += 85/n;  // Slightly increased speed
     if(deltaMoon>360){deltaMoon-=360;}
 }
 
@@ -203,12 +250,11 @@ function moveMars(){
     } else {
         $marsContainer.css('z-index', 6);
     }
-    deltaMars+=1.5/n;  // Further reduced speed
+    deltaMars+=1.8/n;  // Slightly increased speed
     if(deltaMars>360){deltaMars-=360;}
 }
 
 function moveJupiter(){
-    var obj = $('.jupiter_container').eq(0);
     var alpha = Math.PI*deltaJupiter/180;
     $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha)* verticalKaificent);
     $jupiterContainer.css('left', jupiterX + Rjupiter * Math.cos(alpha));
@@ -218,7 +264,7 @@ function moveJupiter(){
     } else {
         $jupiterContainer.css('z-index', 5);
     }
-    deltaJupiter += 0.8/n;  // Further reduced speed
+    deltaJupiter += 1/n;  // Slightly increased speed
     if(deltaJupiter>360){deltaJupiter-=360;}
 }
 
@@ -232,7 +278,7 @@ function moveSaturn(){
     } else {
         $saturnRingContainer.css('z-index', 4);
     }
-    deltaSaturn += 0.5/n;  // Further reduced speed
+    deltaSaturn += 0.7/n;  // Slightly increased speed
     if(deltaSaturn>360){deltaSaturn-=360;}
 }
 
@@ -246,7 +292,7 @@ function moveUranus(){
     } else {
         $uranusContainer.css('z-index', 3);
     }
-    deltaUranus+=0.3/n;  // Further reduced speed
+    deltaUranus+=0.5/n;  // Slightly increased speed
     if(deltaUranus>360){deltaUranus-=360;}
 }
 
@@ -260,9 +306,10 @@ function moveNeptune(){
     } else {
         $neptuneContainer.css('z-index', 3);
     }
-    deltaNeptune+=0.2/n;  // Further reduced speed
+    deltaNeptune+=0.4/n;  // Slightly increased speed
     if(deltaNeptune>360){deltaNeptune-=360;}
 }
+
 
 
 function drawCircles(){
@@ -359,3 +406,7 @@ $(document).mouseup(function() {
 $(document).ready(function(){
   start.click();
 });
+
+
+
+
