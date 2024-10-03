@@ -147,7 +147,7 @@ function moveMercury(){
     } else {
         $mercuryContainer.css('z-index', 9);
     }
-    deltaMerc+=20/n;  // Reduced speed
+    deltaMerc+=5/n;  // Further reduced speed
     if(deltaMerc>360){deltaMerc-=360;}
 }
 
@@ -162,7 +162,7 @@ function moveVenus(){
     } else {
         $venusContainer.css('z-index', 8);
     }
-    deltaVenus+=15/n;  // Reduced speed
+    deltaVenus+=3/n;  // Further reduced speed
     if(deltaVenus>360){deltaVenus-=360;}
 }
 
@@ -176,7 +176,7 @@ function moveEarth(){
     } else {
         $earthMoonContainer.css('z-index', 7);
     }
-    deltaEarth+=12/n;  // Reduced speed
+    deltaEarth+=2/n;  // Further reduced speed
     if(deltaEarth>360){deltaEarth-=360;}
 }
 
@@ -189,7 +189,7 @@ function moveMoon(){
     } else {
         $moon.css('z-index', 9);
     }
-    deltaMoon += 170/n;  // Reduced speed
+    deltaMoon += 80/n;  // Further reduced speed
     if(deltaMoon>360){deltaMoon-=360;}
 }
 
@@ -203,7 +203,7 @@ function moveMars(){
     } else {
         $marsContainer.css('z-index', 6);
     }
-    deltaMars+=10/n;  // Reduced speed
+    deltaMars+=1.5/n;  // Further reduced speed
     if(deltaMars>360){deltaMars-=360;}
 }
 
@@ -218,7 +218,7 @@ function moveJupiter(){
     } else {
         $jupiterContainer.css('z-index', 5);
     }
-    deltaJupiter += 5/n;  // Reduced speed
+    deltaJupiter += 0.8/n;  // Further reduced speed
     if(deltaJupiter>360){deltaJupiter-=360;}
 }
 
@@ -232,7 +232,7 @@ function moveSaturn(){
     } else {
         $saturnRingContainer.css('z-index', 4);
     }
-    deltaSaturn += 4/n;  // Reduced speed
+    deltaSaturn += 0.5/n;  // Further reduced speed
     if(deltaSaturn>360){deltaSaturn-=360;}
 }
 
@@ -246,7 +246,7 @@ function moveUranus(){
     } else {
         $uranusContainer.css('z-index', 3);
     }
-    deltaUranus+=3/n;  // Reduced speed
+    deltaUranus+=0.3/n;  // Further reduced speed
     if(deltaUranus>360){deltaUranus-=360;}
 }
 
@@ -260,9 +260,10 @@ function moveNeptune(){
     } else {
         $neptuneContainer.css('z-index', 3);
     }
-    deltaNeptune+=2/n;  // Reduced speed
+    deltaNeptune+=0.2/n;  // Further reduced speed
     if(deltaNeptune>360){deltaNeptune-=360;}
 }
+
 
 function drawCircles(){
 	var mercuryCircle = $('.mercury_circle').eq(0);
@@ -358,7 +359,3 @@ $(document).mouseup(function() {
 $(document).ready(function(){
   start.click();
 });
-
-
-
-
