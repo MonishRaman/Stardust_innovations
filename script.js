@@ -148,167 +148,170 @@ function move(){
 	moveMoon();	
 }*/
 
-var timerId;  // Global timerId variable
+
+// Randomly initialize delta values for each planet
+var deltaMerc = Math.random() * 360;
+var deltaVenus = Math.random() * 360;
+var deltaEarth = Math.random() * 360;
+var deltaMars = Math.random() * 360;
+var deltaJupiter = Math.random() * 360;
+var deltaSaturn = Math.random() * 360;
+var deltaUranus = Math.random() * 360;
+var deltaNeptune = Math.random() * 360;
+var deltaMoon = Math.random() * 360;
+
+var isAnimating = false;  // Flag to check if animation is running
 
 var start = document.getElementById('start');
 start.onclick = function() {
-    // Only start if the timer is not already running
-    if (!timerId) {
-        timerId = setInterval(move, 20); // Starts the planets' movement
-    }
+    // Only start if not already animating
+    if (!isAnimating) {
+        isAnimating = true; // Set the flag to true
+        animate(); // Start the animation loop
 
-    // Play the background audio
-    var audio = document.getElementById('background-audio');
-    audio.play();
+        // Play the background audio
+        var audio = document.getElementById('background-audio');
+        audio.play();
+    }
 };
 
 var stop = document.getElementById('stop');
 stop.onclick = function() {
-    clearInterval(timerId); // Stops the planets' movement
-    timerId = null;  // Reset timerId to allow restart
+    isAnimating = false; // Set the flag to false, stopping the animation
 
     // Pause the background audio
     var audio = document.getElementById('background-audio');
     audio.pause();
 };
 
-// Function to move planets (as already implemented)
-function move(){
-    moveEarth();
-    moveMercury();
-    moveVenus();
-    moveMars();
-    moveJupiter();
-    moveSaturn();
-    moveUranus();
-    moveNeptune();
-    moveMoon();    
+// Animation function
+function animate() {
+    if (isAnimating) { // Only animate if isAnimating is true
+        moveMercury();
+        moveVenus();
+        moveEarth();
+        moveMoon();
+        moveMars();
+        moveJupiter();
+        moveSaturn();
+        moveUranus();
+        moveNeptune();
+
+        // Request to call animate again on the next frame
+        requestAnimationFrame(animate);
+    }
 }
 
-function moveMercury(){
-    var alpha = Math.PI*deltaMerc/180;
-    $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha)* verticalKaificent);
+// Your existing movement functions (moveMercury, moveVenus, etc.)...
+
+
+function moveMercury() {
+    var alpha = Math.PI * deltaMerc / 180;
+    $mercuryContainer.css('top', mercuryY + Rmercury * Math.sin(alpha) * verticalKaificent);
     $mercuryContainer.css('left', mercuryX + Rmercury * Math.cos(alpha));
-    mercury.css('transform','rotate(' + deltaMerc + 'deg)');
-    if (deltaMerc<180) {
-        $mercuryContainer.css('z-index', 11);
-    } else {
-        $mercuryContainer.css('z-index', 9);
+    mercury.css('transform', 'rotate(' + deltaMerc + 'deg)');
+    $mercuryContainer.css('z-index', deltaMerc < 180 ? 11 : 9);
+    deltaMerc += 10 / n;  // Increased speed
+    if (deltaMerc > 360) {
+        deltaMerc -= 360;
     }
-    deltaMerc+=5.5/n;  // Slightly increased speed
-    if(deltaMerc>360){deltaMerc-=360;}
 }
 
-function moveVenus(){
-    var alpha = Math.PI*deltaVenus/180;
-    $venusContainer.css('top', venusY + Rvenus * Math.sin(alpha)* verticalKaificent);
+function moveVenus() {
+    var alpha = Math.PI * deltaVenus / 180;
+    $venusContainer.css('top', venusY + Rvenus * Math.sin(alpha) * verticalKaificent);
     $venusContainer.css('left', venusX + Rvenus * Math.cos(alpha));
-    venus.css('transform','rotate(' + deltaVenus + 'deg)');
-    if (deltaVenus<180) {
-        $venusContainer.css('z-index', 12);
-    } else {
-        $venusContainer.css('z-index', 8);
+    venus.css('transform', 'rotate(' + deltaVenus + 'deg)');
+    $venusContainer.css('z-index', deltaVenus < 180 ? 12 : 8);
+    deltaVenus += 7 / n;  // Increased speed
+    if (deltaVenus > 360) {
+        deltaVenus -= 360;
     }
-    deltaVenus+=3.5/n;  // Slightly increased speed
-    if(deltaVenus>360){deltaVenus-=360;}
 }
 
-function moveEarth(){
-    var alpha = Math.PI*deltaEarth/180;
-    $earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha)* verticalKaificent);
+function moveEarth() {
+    var alpha = Math.PI * deltaEarth / 180;
+    $earthMoonContainer.css('top', earthY + Rearth * Math.sin(alpha) * verticalKaificent);
     $earthMoonContainer.css('left', earthX + Rearth * Math.cos(alpha));
-    earth.css('transform','rotate(' + deltaEarth + 'deg)');
-    if (deltaEarth<180) {
-        $earthMoonContainer.css('z-index', 13);
-    } else {
-        $earthMoonContainer.css('z-index', 7);
+    earth.css('transform', 'rotate(' + deltaEarth + 'deg)');
+    $earthMoonContainer.css('z-index', deltaEarth < 180 ? 13 : 7);
+    deltaEarth += 5 / n;  // Increased speed
+    if (deltaEarth > 360) {
+        deltaEarth -= 360;
     }
-    deltaEarth+=2.5/n;  // Slightly increased speed
-    if(deltaEarth>360){deltaEarth-=360;}
 }
 
-function moveMoon(){
-    var alpha = Math.PI*deltaMoon/180;
-    $moon.css('top', moonY + Rmoon * Math.sin(alpha)* verticalKaificent);
+function moveMoon() {
+    var alpha = Math.PI * deltaMoon / 180;
+    $moon.css('top', moonY + Rmoon * Math.sin(alpha) * verticalKaificent);
     $moon.css('left', moonX + Rmoon * Math.cos(alpha));
-    if (deltaMoon<180) {
-        $moon.css('z-index', 11);
-    } else {
-        $moon.css('z-index', 9);
+    $moon.css('z-index', deltaMoon < 180 ? 11 : 9);
+    deltaMoon += 170 / n;  // Increased speed
+    if (deltaMoon > 360) {
+        deltaMoon -= 360;
     }
-    deltaMoon += 85/n;  // Slightly increased speed
-    if(deltaMoon>360){deltaMoon-=360;}
 }
 
-function moveMars(){
-    var alpha = Math.PI*deltaMars/180;
-    $marsContainer.css('top', marsY + Rmars * Math.sin(alpha)* verticalKaificent);
+function moveMars() {
+    var alpha = Math.PI * deltaMars / 180;
+    $marsContainer.css('top', marsY + Rmars * Math.sin(alpha) * verticalKaificent);
     $marsContainer.css('left', marsX + Rmars * Math.cos(alpha));
-    mars.css('transform','rotate(' + deltaMars + 'deg)');
-    if (deltaMars<180) {
-        $marsContainer.css('z-index', 14);
-    } else {
-        $marsContainer.css('z-index', 6);
+    mars.css('transform', 'rotate(' + deltaMars + 'deg)');
+    $marsContainer.css('z-index', deltaMars < 180 ? 14 : 6);
+    deltaMars += 4.5 / n;  // Increased speed
+    if (deltaMars > 360) {
+        deltaMars -= 360;
     }
-    deltaMars+=1.8/n;  // Slightly increased speed
-    if(deltaMars>360){deltaMars-=360;}
 }
 
-function moveJupiter(){
-    var alpha = Math.PI*deltaJupiter/180;
-    $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha)* verticalKaificent);
+function moveJupiter() {
+    var alpha = Math.PI * deltaJupiter / 180;
+    $jupiterContainer.css('top', jupiterY + Rjupiter * Math.sin(alpha) * verticalKaificent);
     $jupiterContainer.css('left', jupiterX + Rjupiter * Math.cos(alpha));
-    jupiter.css('transform','rotate(' + deltaJupiter + 'deg)');
-    if (deltaJupiter<180) {
-        $jupiterContainer.css('z-index', 15);
-    } else {
-        $jupiterContainer.css('z-index', 5);
+    jupiter.css('transform', 'rotate(' + deltaJupiter + 'deg)');
+    $jupiterContainer.css('z-index', deltaJupiter < 180 ? 15 : 5);
+    deltaJupiter += 2 / n;  // Increased speed
+    if (deltaJupiter > 360) {
+        deltaJupiter -= 360;
     }
-    deltaJupiter += 1/n;  // Slightly increased speed
-    if(deltaJupiter>360){deltaJupiter-=360;}
 }
 
-function moveSaturn(){
-    var alpha = Math.PI*deltaSaturn/180;
-    $saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(alpha)* verticalKaificent);
+function moveSaturn() {
+    var alpha = Math.PI * deltaSaturn / 180;
+    $saturnRingContainer.css('top', saturnY + Rsaturn * Math.sin(alpha) * verticalKaificent);
     $saturnRingContainer.css('left', saturnX + Rsaturn * Math.cos(alpha));
-    saturn.css('transform','rotate(' + deltaSaturn + 'deg)');
-    if (deltaSaturn<180){
-        $saturnRingContainer.css('z-index', 16);
-    } else {
-        $saturnRingContainer.css('z-index', 4);
+    saturn.css('transform', 'rotate(' + deltaSaturn + 'deg)');
+    $saturnRingContainer.css('z-index', deltaSaturn < 180 ? 16 : 4);
+    deltaSaturn += 1.5 / n;  // Increased speed
+    if (deltaSaturn > 360) {
+        deltaSaturn -= 360;
     }
-    deltaSaturn += 0.7/n;  // Slightly increased speed
-    if(deltaSaturn>360){deltaSaturn-=360;}
 }
 
-function moveUranus(){
-    var alpha = Math.PI*deltaUranus/180;
-    $uranusContainer.css('top', uranusY + Ruranus * Math.sin(alpha)* verticalKaificent);
+function moveUranus() {
+    var alpha = Math.PI * deltaUranus / 180;
+    $uranusContainer.css('top', uranusY + Ruranus * Math.sin(alpha) * verticalKaificent);
     $uranusContainer.css('left', uranusX + Ruranus * Math.cos(alpha));
-    uranus.css('transform','rotate(' + deltaUranus + 'deg)');
-    if (deltaUranus<180){
-        $uranusContainer.css('z-index', 17);
-    } else {
-        $uranusContainer.css('z-index', 3);
+    uranus.css('transform', 'rotate(' + deltaUranus + 'deg)');
+    $uranusContainer.css('z-index', deltaUranus < 180 ? 17 : 3);
+    deltaUranus += 1 / n;  // Increased speed
+    if (deltaUranus > 360) {
+        deltaUranus -= 360;
     }
-    deltaUranus+=0.5/n;  // Slightly increased speed
-    if(deltaUranus>360){deltaUranus-=360;}
 }
 
-function moveNeptune(){
-    var alpha = Math.PI*deltaNeptune/180;
-    $neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(alpha)* verticalKaificent);
+function moveNeptune() {
+    var alpha = Math.PI * deltaNeptune / 180;
+    $neptuneContainer.css('top', neptuneY + Rneptune * Math.sin(alpha) * verticalKaificent);
     $neptuneContainer.css('left', neptuneX + Rneptune * Math.cos(alpha));
-    uranus.css('transform','rotate(' + deltaNeptune + 'deg)');
-    if (deltaNeptune<180){
-        $neptuneContainer.css('z-index', 17);
-    } else {
-        $neptuneContainer.css('z-index', 3);
+    uranus.css('transform', 'rotate(' + deltaNeptune + 'deg)');
+    $neptuneContainer.css('z-index', deltaNeptune < 180 ? 17 : 3);
+    deltaNeptune += 0.8 / n;  // Increased speed
+    if (deltaNeptune > 360) {
+        deltaNeptune -= 360;
     }
-    deltaNeptune+=0.4/n;  // Slightly increased speed
-    if(deltaNeptune>360){deltaNeptune-=360;}
 }
+
 
 
 
@@ -405,8 +408,4 @@ $(document).mouseup(function() {
 };
 $(document).ready(function(){
   start.click();
-});
-
-
-
-
+})
