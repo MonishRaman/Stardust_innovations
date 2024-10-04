@@ -1,172 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solar System with Control Panel</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .content {
-            display: flex;
-            justify-content: space-between;
-            height: 100vh;
-            background-color: black;
-        }
-
-        .solar-system-view {
-            flex: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Milky_Way_2005.jpg');
-            background-size: cover;
-            overflow: hidden;
-        }
-
-        .control-panel-container {
-            flex: 1;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-left: 2px solid #ccc;
-            height: 100vh;
-            box-sizing: border-box;
-            color: #333;
-        }
-
-        .control-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .control-panel label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .control-panel input[type="range"],
-        .control-panel input[type="checkbox"] {
-            margin-bottom: 10px;
-        }
-
-        .control-panel button {
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        .control-panel button:hover {
-            background-color: #45a049;
-        }
-
-        .control-panel h4 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .planet {
-            width: 100px;
-            height: 100px;
-        }
-
-        .planet img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .orbit {
-            position: absolute;
-            border: 1px dashed #fff;
-            border-radius: 50%;
-        }
-
-        .sun {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            z-index: 10;
-        }
-
-        .earth-orbit {
-            width: 300px;
-            height: 300px;
-        }
-
-        .earth {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -150px;
-            margin-left: -150px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="content">
-        <!-- Solar System view -->
-        <div class="solar-system-view" id="solarSystem">
-            <div class="sun">
-                <img src="https://res.cloudinary.com/yerevan/image/upload/v1484080036/earth_saibbo.gif" alt="Sun">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solar System</title>
+        <link rel="stylesheet" href="m2.css"> <!-- Link to your CSS file -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/fullpage.js"></script> <!-- FullPage.js -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Particles.js -->
+        <script src="m3.js" defer></script> <!-- Include your custom JavaScript file -->
+    </head>
+    <body id="particle-js">
+        <header id="header" style="background: transparent; margin: 0; padding: 0;">
+            <div class="inner">
+                <!-- <h1 class="logo">Solar System</h1> -->
             </div>
-
-            <div class="orbit earth-orbit">
-                <div class="planet earth">
-                    <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/iss065e080354_lrg.jpg" alt="Earth">
+        </header>
+        <div id="fullpage-wrapper" class="fullpage-wrapper js-main-slider">
+            <!-- Mercury section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Mercury</h1>
+                        <p>Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 days, the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.</p>
+                        <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Add more planets and orbits here -->
-        </div>
+            <!-- Venus section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Venus</h1>
+                        <p>Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the second-brightest natural object in the night sky after the Moon, Venus can cast shadows and, rarely, is visible to the naked eye in broad daylight.</p>
+                        <a href="https://en.wikipedia.org/wiki/Venus" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Control Panel -->
-        <div class="control-panel-container">
-            <div class="control-panel">
-                <h4>Control System</h4>
-                <label for="speedControl">Orbit Speed</label>
-                <input type="range" id="speedControl" min="5" max="50" value="20" />
+            <!-- Earth section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Earth</h1>
+                        <p>Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago.</p>
+                        <a href="https://en.wikipedia.org/wiki/Earth" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="rotationControl">Planet Rotation Speed</label>
-                <input type="range" id="rotationControl" min="1" max="50" value="10" />
+            <!-- Mars section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Mars</h1>
+                        <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war and is often referred to as the 'Red Planet'.</p>
+                        <a href="https://en.wikipedia.org/wiki/Mars" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="zoomControl">Zoom</label>
-                <input type="range" id="zoomControl" min="0.5" max="2" step="0.1" value="1" />
+            <!-- Jupiter section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Jupiter</h1>
+                        <p>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.</p>
+                        <a href="https://en.wikipedia.org/wiki/Jupiter" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="modeSwitch">Night Mode</label>
-                <input type="checkbox" id="modeSwitch" checked />
+            <!-- Saturn section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Saturn</h1>
+                        <p>Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has only one-eighth the average density of Earth; however, with its larger volume, Saturn is over 95 times more massive.</p>
+                        <a href="https://en.wikipedia.org/wiki/Saturn" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="orbitToggle">Show Orbits</label>
-                <input type="checkbox" id="orbitToggle" checked />
+            <!-- Uranus section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Uranus</h1>
+                        <p>Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have bulk chemical compositions which differ from that of the larger gas giants Jupiter and Saturn.</p>
+                        <a href="https://en.wikipedia.org/wiki/Uranus" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="planetSizeControl">Planet Size</label>
-                <input type="range" id="planetSizeControl" min="50" max="200" value="64" />
+            <!-- Neptune section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Neptune</h1>
+                        <p>Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.</p>
+                        <a href="https://en.wikipedia.org/wiki/Neptune" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
 
-                <label for="presetSpeed">Speed Presets:</label>
-                <button id="slowMode">Slow</button>
-                <button id="mediumMode">Medium</button>
-                <button id="fastMode">Fast</button>
-                <button onclick="window.location.href='index.html'">Exit</button>
+            <!-- Pluto section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="txt" style="margin-top: 300px;">
+                        <h1>Pluto</h1>
+                        <p>Pluto is an icy dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first Kuiper belt object to be discovered and is the largest known dwarf planet. Pluto was discovered by Clyde Tombaugh in 1930 as the ninth planet from the Sun.</p>
+                        <a href="https://en.wikipedia.org/wiki/Pluto" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credits section -->
+            <div class="c-main-slide js-main-slide section">
+                <div class="inner">
+                    <div class="credits" style="margin-top: 300px; text-align: center;">
+                        <h1>Credits</h1>
+                        <p>
+                            Inspired by this <a href="https://dribbble.com/shots/9805475-Planets-landing-page" target="_blank">Dribbble Shot</a>.
+                            This was built using <a href="https://alvarotrigo.com/fullPage/" target="_blank">fullPage.js</a>.
+                            I used <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> for content,
+                            <a href="https://solarsystem.nasa.gov/">NASA</a> for images of planets, and
+                            <a href="https://codepen.io/prathameshkoshti/pen/oNgVdXV" target="_blank">this codepen</a> for the particles in the background.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <audio id="background-audio" autoplay loop>
-        <source src="assets/Solar System Sound (mp3cut.net).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-</body>
-
+        <!-- Solar system planets -->
+        <div id="solar-system">
+            <div id="sun"></div>
+            <div id="mercury" class="planet"></div>
+            <div id="venus" class="planet"></div>
+            <div id="earth" class="planet"></div>
+            <div id="mars" class="planet"></div>
+            <div id="jupiter" class="planet"></div>
+            <div id="saturn" class="planet"></div>
+            <div id="uranus" class="planet"></div>
+            <div id="neptune" class="planet"></div>
+            <div id="pluto" class="planet"></div>
+        </div>
+    </body>
 </html>
