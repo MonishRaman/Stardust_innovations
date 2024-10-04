@@ -15,23 +15,27 @@ body{
 	height: 100vh; /* Ensures the body takes full height */
 	overflow: hidden; /* Prevents scrolling */
 }
-.content{
-	margin: 0; /* Remove margin */
-	width: 100vw; /* Full viewport width */
-	height: 100vh; /* Full viewport height */
-	background-color: #100020; /* Fallback background color */
-	background-image: url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg');
-	background-size: cover; /* Ensures background image covers the entire area */
-	background-position: center; /* Center the background image */
+.content {
+	margin: 0;
+	min-height: 100vh; /* Improved mobile compatibility */
+	width: 100vw;
+	/*background-color: #100020;  Fallback */
+	background-color: transparent;
+	background-image: url('path_to_a_local_fallback_image.jpg'), url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed; /* Optional for a nice parallax-like effect */
 	position: relative;
 }
-.content:before{
+.content:before {
 	content: "";
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.5);
+	/*background-color: rgba(0, 0, 0, 0.5);  Overlay */
+	background-color: transparent;
 }
+
 
 .sun{
 	width: 100px;
