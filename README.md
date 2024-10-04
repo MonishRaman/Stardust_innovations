@@ -15,7 +15,7 @@ This project is a simple 2D simulation of the solar system, showcasing planets o
 
 ## Demo
 Check out the live demo of the project:
-[Live Demo]((https://stardustinnovations.netlify.app/)) 
+[Live Demo](https://stardustinnovations.netlify.app/) 
 
 ## Features
 - **Sun**: The center of the solar system, around which all planets orbit.
