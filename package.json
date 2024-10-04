@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@sentry/browser": "^8.33.1",
+    "@sentry/cli": "^2.36.6"
+  },
+  "scripts": {
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org self-pkj --project javascript https://stardustinnovations.netlify.app/ && sentry-cli sourcemaps upload --org self-pkj --project javascript https://stardustinnovations.netlify.app/"
+  }
+}

@@ -12,7 +12,9 @@
     cursor: pointer;
     font-size: 16px;
     transition: all .5s ease-in-out;
+    margin-bottom: 20px; /* Adds space between stacked buttons */
 }
+
 
 .btn-primary {
     color: var(--dark);
