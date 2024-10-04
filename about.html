@@ -101,23 +101,18 @@
             font-size: 1rem;
         }
 
-        /* Reverse card layout */
-        .team-card.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .team-card.reverse img {
-            margin-left: 20px;
-            margin-right: 0;
+        /* Remove reverse layout */
+        .team-card img {
+            margin-right: 20px;
         }
 
         /* Responsive layout */
         @media (max-width: 768px) {
-            .team-card, .team-card.reverse {
+            .team-card {
                 flex-direction: column;
             }
 
-            .team-card img, .team-card.reverse img {
+            .team-card img {
                 margin: 0 0 15px 0;
                 width: 150px;
                 height: 150px;
@@ -130,14 +125,10 @@
         <div class="about-container">
             <h1>About Us</h1>
             <h2>Who We Are:</h2>
-            <p>Stardust Innovators is a collective of passionate individuals, united by curiosity and creativity. We come from diverse backgrounds—ranging from engineering, software development, and physics to design and data science—but share a common goal: to explore and solve some of the most exciting challenges in space exploration and technology. Our work is guided by a commitment to push the boundaries of what’s possible, using innovative thinking and advanced technology.</p>
+            <p>Stardust Innovators is a collective of passionate individuals, united by curiosity and creativity...</p>
             <br><br>
             <h2>Our Interests:</h2>
-            <p>Space Exploration: We are fascinated by the mysteries of the cosmos and driven to find sustainable solutions for both space and Earth.</p>
-            <p>Artificial Intelligence & Machine Learning: Harnessing AI to solve complex problems, from mission-critical space solutions to groundbreaking simulations.</p>
-            <p>Data Analysis & Modeling for Space Missions: We use data-driven approaches to create accurate models for space projects, improving decision-making and system efficiencies.</p>
-            <p>Satellite Systems & Communication Technologies: Developing robust systems that power communication networks and facilitate the exchange of critical data.</p>
-            <p>Sustainability: Innovating with an eye toward sustainable technologies that can benefit space missions as well as life on Earth.</p>
+            <p>Space Exploration, Artificial Intelligence, and much more...</p>
             <br>
             <button id="learnMoreBtn">Learn More</button>
         </div>
@@ -145,50 +136,50 @@
         <!-- Team Section -->
         <div class="team-section">
             <div class="team-card">
-                <img src="assets/images/monish.jpg" alt="Team Member 1">
+                <img src="assets/images/monish.jpg" alt="Monish.R">
                 <div>
                     <h3>Monish.R</h3>
-                    <p>Lead Engineer with a passion for space robotics and hardware development. Jane has worked on numerous space-related projects and specializes in automation.</p>
+                    <p>Lead Engineer with a passion for space robotics and hardware development...</p>
                 </div>
             </div>
 
-            <div class="team-card reverse">
-                <img src="./assets/images/shaswat.jpg" alt="Team Member 2">
+            <div class="team-card">
+                <img src="./assets/images/Shaswat MISHA NASA.jpg" alt="Shaswat Mishra">
                 <div>
                     <h3>Shaswat Mishra</h3>
-                    <p>Software Developer with expertise in Python and AI tools. John is known for creating intelligent systems for space simulations and mission-critical applications.</p>
+                    <p>Software Developer with expertise in Python and AI tools...</p>
                 </div>
             </div>
 
             <div class="team-card">
-                <img src="./assets/images/junaid.jpg" alt="Team Member 3">
+                <img src="./assets/images/junaid.jpg" alt="Mohammed Junaid">
                 <div>
                     <h3>Mohammed Junaid</h3>
-                    <p>Data Scientist focused on space data analysis and predictive modeling. Emily ensures that our missions are backed by solid, data-driven insights.</p>
-                </div>
-            </div>
-
-            <div class="team-card reverse">
-                <img src="./assets/images/prashanth.jpg" alt="Team Member 2">
-                <div>
-                    <h3>Prashanth A N</h3>
-                    <p>Software Developer with expertise in Python and AI tools. John is known for creating intelligent systems for space simulations and mission-critical applications.</p>
+                    <p>Data Scientist focused on space data analysis and predictive modeling...</p>
                 </div>
             </div>
 
             <div class="team-card">
-                <img src="./assets/images/Mourya.jpg" alt="Team Member 3">
+                <img src="./assets/images/prashanth.jpg" alt="Prashanth A N">
                 <div>
-                    <h3>Mourya</h3>
-                    <p>Data Scientist focused on space data analysis and predictive modeling. Emily ensures that our missions are backed by solid, data-driven insights.</p>
+                    <h3>Prashanth A N</h3>
+                    <p>Software Developer with expertise in Python and AI tools...</p>
                 </div>
             </div>
 
-            <div class="team-card reverse">
-                <img src="./assets/images/shadab.jpg" alt="Team Member 2">
+            <div class="team-card">
+                <img src="./assets/images/Mourya.jpg" alt="Mourya">
+                <div>
+                    <h3>Mourya</h3>
+                    <p>Data Scientist focused on space data analysis and predictive modeling...</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="./assets/images/shadab.jpg" alt="Mohammed Shadab Saleem">
                 <div>
                     <h3>Mohammed Shadab Saleem</h3>
-                    <p>Software Developer with expertise in Python and AI tools. John is known for creating intelligent systems for space simulations and mission-critical applications.</p>
+                    <p>Software Developer with expertise in Python and AI tools...</p>
                 </div>
             </div>
         </div>
