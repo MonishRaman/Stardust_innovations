@@ -15,7 +15,7 @@ This project is a simple 2D simulation of the solar system, showcasing planets o
 
 ## Demo
 Check out the live demo of the project:
-[Live Demo](#) *(replace this with a real link if hosted online)*
+[(https://stardustinnovations.netlify.app/)](#) *(replace this with a real link if hosted online)*
 
 ## Features
 - **Sun**: The center of the solar system, around which all planets orbit.
@@ -35,14 +35,16 @@ Check out the live demo of the project:
 To get started with this project locally, follow these steps:
 
 1. Clone the repository:
+   ```bash
    
    (https://github.com/MonishRaman/Stardust_innovations.git)
    
-2. Navigate to the project directory:
+3. Navigate to the project directory:
+   ```bash
    
    cd solar-system-model
    
-3. Open the index.html file in your web browser.
+5. Open the index.html file in your web browser.
 
  Usage
    When you open the index.html file, you’ll see:
@@ -55,11 +57,11 @@ To get started with this project locally, follow these steps:
   
 Contributing:
 
-      Contributions are welcome! If you'd like to improve the project, feel free to fork the repository and submit a pull request with your improvements. For major changes, please open an issue first to discuss what you'd like to change.
-      
-      Steps to contribute:
-      Fork this repository.
-      Create a branch (git checkout -b new-feature).
-      Commit your changes (git commit -m 'Add new feature').
-      Push the branch (git push origin new-feature).
-      Open a Pull Request.
+  Contributions are welcome! If you'd like to improve the project, feel free to fork the repository and submit a pull request with your improvements. For major changes, please open an issue first to discuss what you'd like to change.
+  
+  Steps to contribute:
+  Fork this repository.
+  Create a branch (git checkout -b new-feature).
+  Commit your changes (git commit -m 'Add new feature').
+  Push the branch (git push origin new-feature).
+  Open a Pull Request.
