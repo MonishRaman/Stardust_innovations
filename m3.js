@@ -1,4 +1,3 @@
-
 $(function() {
 
     function initFullPage() {
@@ -9,19 +8,30 @@ $(function() {
             navigation: true,
             navigationPosition: 'right',
             navigationTooltips: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Credits'],
-            // showActiveTooltip:true,
             css3: true,
             autoScrolling: true,
-            // Custom selectors
+            fitToSection: true,
+            scrollOverflow: true,  // Handle overflow for sections
             sectionSelector: '.js-main-slide',
-            licenseKey: '',
             normalScrollElements: '.fancybox-container',
+            afterLoad: function(origin, destination, direction) {
+                // When arriving back to Mercury, force it to re-render
+                if (destination.index === 0) {
+                    $('#fullpage-wrapper .c-main-slide:first-child').css('display', 'none');  // Hide temporarily
+                    setTimeout(function(){
+                        $('#fullpage-wrapper .c-main-slide:first-child').css('display', 'block');  // Force display again
+                    }, 100);  // Small delay to force a repaint
+                }
+            },
         });
     }
 
     initFullPage();
-   
+
 });
+
+
+
 
 // Particle js stars
 particlesJS("particle-js", {
