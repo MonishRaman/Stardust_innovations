@@ -1,9 +1,6 @@
-
 # Solar System Model 🌍🌞🪐
 
-https://stardustinnovations.netlify.app/
-
-This project is a simple 2D simulation of the solar system, showing the planets orbiting around the Sun. The model is created using HTML, CSS, and JavaScript, and provides a basic visualization of the planetary motion.
+This project is a simple 2D simulation of the solar system, showcasing planets orbiting around the Sun in a circular pattern. The model is created using HTML, CSS, and JavaScript and provides a basic visualization of planetary motion, including Earth's Moon.
 
 ## Table of Contents
 - [Demo](#demo)
@@ -13,30 +10,56 @@ This project is a simple 2D simulation of the solar system, showing the planets 
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Customization](#customization)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Demo
 Check out the live demo of the project:
-[Live Demo](#)
+[Live Demo](#) *(replace this with a real link if hosted online)*
 
 ## Features
-- 🌞 **Sun**: The center of the solar system, around which all planets orbit.
-- 🪐 **Planets**: Planets rotate around the Sun in circular orbits at different speeds and distances.
-  - Mercury, Venus, Earth (with Moon), Mars, Jupiter, Saturn (with Rings), Uranus, Neptune.
-- 🌙 **Moon**: Earth's moon orbits around Earth.
-- 🔄 **Realistic Orbital Motion**: Each planet moves around the Sun in a continuous loop, with varying speeds based on its distance.
+- **Sun**: The center of the solar system, around which all planets orbit.
+- **Planets**: Simulated orbits for:
+  - Mercury, Venus, Earth (with Moon), Mars, Jupiter, Saturn (with Rings), Uranus, and Neptune.
+- **Earth's Moon**: Orbits around the Earth.
+- **Planetary Rotation**: Each planet revolves around the Sun at different speeds, proportional to its distance from the Sun.
+- **Scalable Orbits**: The orbits and rotations are based on simplified but scalable measurements for educational purposes.
 
 ## Technologies
 - **HTML5**: Structure and content.
-- **CSS3**: Styling and animations.
-- **JavaScript**: Logic for orbital motion and animation.
+- **CSS3**: Visuals, including animations for rotation and orbit paths.
+- **JavaScript**: Handles the logic of orbital paths and planet motions.
 
 ## Installation
 
+To get started with this project locally, follow these steps:
+
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/solar-system-model.git
+   
+   (https://github.com/MonishRaman/Stardust_innovations.git)
+   
+2. Navigate to the project directory:
+   
+   cd solar-system-model
+   
+3. Open the index.html file in your web browser.
 
+ Usage
+   When you open the index.html file, you’ll see:
 
+  The Sun at the center of the screen.
+  Planets orbiting around the Sun at different distances and speeds.
+  The Moon orbiting the Earth.
+  Controls:
+  The system is fully automated and runs continuously.
+  
+Contributing:
 
-
+      Contributions are welcome! If you'd like to improve the project, feel free to fork the repository and submit a pull request with your improvements. For major changes, please open an issue first to discuss what you'd like to change.
+      
+      Steps to contribute:
+      Fork this repository.
+      Create a branch (git checkout -b new-feature).
+      Commit your changes (git commit -m 'Add new feature').
+      Push the branch (git push origin new-feature).
+      Open a Pull Request.
