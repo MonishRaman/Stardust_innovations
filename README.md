@@ -15,7 +15,7 @@ This project is a simple 2D simulation of the solar system, showcasing planets o
 
 ## Demo
 Check out the live demo of the project:
-[(https://stardustinnovations.netlify.app/)](#) *(replace this with a real link if hosted online)*
+[Live Demo]([#](https://stardustinnovations.netlify.app/)) 
 
 ## Features
 - **Sun**: The center of the solar system, around which all planets orbit.
@@ -60,8 +60,13 @@ Contributing:
   Contributions are welcome! If you'd like to improve the project, feel free to fork the repository and submit a pull request with your improvements. For major changes, please open an issue first to discuss what you'd like to change.
   
   Steps to contribute:
+  
   Fork this repository.
+  
   Create a branch (git checkout -b new-feature).
+  
   Commit your changes (git commit -m 'Add new feature').
+  
   Push the branch (git push origin new-feature).
+  
   Open a Pull Request.
