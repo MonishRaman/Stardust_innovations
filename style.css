@@ -509,3 +509,101 @@ button{
     height: 50%;
     object-fit: contain; /* Ensures the logo is contained properly */
 }
+
+*{
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+body{
+	position: relative;
+	cursor: -webkit-grab;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	height: 100vh; /* Ensures the body takes full height */
+	overflow: hidden; /* Prevents scrolling */
+}
+.content {
+	margin: 0;
+	min-height: 100vh; /* Improved mobile compatibility */
+	width: 100vw;
+	/*background-color: #100020;  Fallback */
+	background-color: transparent;
+	background-image: url('path_to_a_local_fallback_image.jpg'), url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed; /* Optional for a nice parallax-like effect */
+	position: relative;
+}
+.content:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*background-color: rgba(0, 0, 0, 0.5);  Overlay */
+	background-color: transparent;
+}
+
+/* Styles for planets, sun, and shadows */
+/* Keep the remaining styles for your celestial objects as is */
+
+.controls{
+	position: fixed;
+	float: right;
+	padding: 20px;
+	bottom: 0;
+}
+.controls>p{
+  display: inline-block;
+  margin: 20px;
+}
+
+button{
+	top: 0;
+	font-size: 25px;
+	padding: 10px 50px;
+	background-color: transparent;
+}
+.nasa-app {
+    margin-top: 20px; /* Space above the app */
+    text-align: center; /* Center the iframe */
+}
+/* Chatbot button */
+.chatbot-button {
+    position: fixed; /* Keeps it in the same spot as the user scrolls */
+    bottom: 30px; /* Distance from the bottom of the page */
+    right: 30px; /* Distance from the right side */
+    width: 60px; /* Width of the button */
+    height: 60px; /* Height of the button */
+    background-color: #007bff; /* Background color (adjust as needed) */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex; /* To center the icon inside */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+    cursor: pointer; /* Makes the button clickable */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+.chatbot-button img {
+    width: 50%; /* Adjust size of the image inside the button */
+    height: 50%;
+    object-fit: contain; /* Ensures the logo is contained properly */
+}
+
+/* Custom styles for nav and header */
+nav {
+    border: none;
+    box-shadow: none;
+    background-color: transparent; /* Ensures there's no background behind the nav */
+}
+
+header {
+    border: none;
+    box-shadow: none;
+}
+

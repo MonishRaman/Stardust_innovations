@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"> <!-- Add your styles -->
+    <link rel="stylesheet" href="contact.css"> <!-- Add your styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Contact Us | Space Explorers</title>
     <style>
+        /* Your existing styles remain the same */
         body {
             background-color: #000d1f;
             color: white;
@@ -17,35 +17,17 @@
             overflow-x: hidden;
         }
 
+        /* Navigation Bar styles */
         nav {
             display: flex;
-            justify-content: space-between;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center; /* Center the logo */
+            padding: 1rem 0; /* Optional: Add some padding */
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
+        /* Form-related styles can go here */
         .contact-header {
             text-align: center;
-            padding: 5rem 0;
-            background: url('https://cdn.pixabay.com/photo/2019/10/28/10/51/galaxy-4586495_1280.jpg') no-repeat center center/cover;
-            color: white;
+            padding: 0.5rem 0; /* Further reduced padding to decrease gap */
         }
 
         .contact-header h1 {
@@ -82,15 +64,6 @@
             font-size: 1rem;
         }
 
-        .form-box input:focus, .form-box textarea:focus {
-            outline: none;
-            border: 1px solid #ffffffcc;
-        }
-
-        .form-box textarea {
-            height: 150px;
-        }
-
         .form-box button {
             width: 100%;
             padding: 1rem;
@@ -100,65 +73,17 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         .form-box button:hover {
             background-color: #0196a0;
         }
-
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .contact-icons a {
-            margin: 0 1rem;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .contact-icons a:hover {
-            color: #01a9ac;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-        }
-
-        .footer a {
-            color: #01a9ac;
-        }
-
-        @media screen and (max-width: 768px) {
-            .contact-header h1 {
-                font-size: 2rem;
-            }
-
-            .contact-header p {
-                font-size: 1rem;
-            }
-
-            .form-box button {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
-
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="/"><img src="img/logo.png" alt="Space Logo" width="100"></a>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-        </ul>
+        <a href="/"><img src="assets/images/bacground remove logo.png" alt="Space Logo" width="250"></a>
     </nav>
 
     <!-- Contact Header -->
@@ -170,21 +95,23 @@
     <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="contact-form-container">
-            <div class="form-box">
-                <input type="text" placeholder="Enter Your Name" required>
-            </div>
-            <div class="form-box">
-                <input type="email" placeholder="Enter Your Email" required>
-            </div>
-            <div class="form-box">
-                <input type="text" placeholder="Enter Your Subject" required>
-            </div>
-            <div class="form-box">
-                <textarea placeholder="Your Message" required></textarea>
-            </div>
-            <div class="form-box">
-                <button type="submit">Send Message</button>
-            </div>
+            <form action="contact.php" method="POST"> <!-- Connect to PHP file here -->
+                <div class="form-box">
+                    <input type="text" name="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="form-box">
+                    <input type="email" name="email" placeholder="Enter Your Email" required>
+                </div>
+                <div class="form-box">
+                    <input type="text" name="subject" placeholder="Enter Your Subject" required>
+                </div>
+                <div class="form-box">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="form-box">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -202,6 +129,7 @@
         <p><a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a></p>
     </footer>
 
+    <!-- Link your JavaScript file -->
+    <script src="contact.js"></script> <!-- JS for additional features -->
 </body>
-
 </html>
