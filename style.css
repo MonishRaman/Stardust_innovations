@@ -487,3 +487,25 @@ button{
     margin-top: 20px; /* Space above the app */
     text-align: center; /* Center the iframe */
 }
+/* Chatbot button */
+.chatbot-button {
+    position: fixed; /* Keeps it in the same spot as the user scrolls */
+    bottom: 30px; /* Distance from the bottom of the page */
+    right: 30px; /* Distance from the right side */
+    width: 60px; /* Width of the button */
+    height: 60px; /* Height of the button */
+    background-color: #007bff; /* Background color (adjust as needed) */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex; /* To center the icon inside */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+    cursor: pointer; /* Makes the button clickable */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+.chatbot-button img {
+    width: 50%; /* Adjust size of the image inside the button */
+    height: 50%;
+    object-fit: contain; /* Ensures the logo is contained properly */
+}
