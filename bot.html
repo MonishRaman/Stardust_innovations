@@ -3,39 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trajectory Chatbot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        .container {
-            padding: 20px;
-        }
-        .redirect-message {
-            font-size: 1.2rem;
-            margin-top: 50px;
-        }
-        .btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="bot.css">
+    <title>Chatbot</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Trajectory Chatbot</h2>
-        <p class="redirect-message">Click the button below to open the Trajectory Chatbot.</p>
-        <!-- Link to the Streamlit app for the Trajectory Chatbot -->
-        <button class="btn" onclick="window.location.href='http://localhost:8501'">Open Trajectory Chatbot</button>
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <p>Hi there! How can I help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
     </div>
+
+    <script src="bot.js" defer></script>
 </body>
 </html>
