@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bot.css">
     <title>Chatbot</title>
+    <style>
+        /* Styles for the arrow and green text */
+        .arrow-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .arrow-text {
+            font-size: 16px;
+            color: green;
+            margin-bottom: 5px;
+        }
+
+        .arrow-image {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .chatbot-toggler {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot-toggler .material-symbols-rounded {
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Arrow container with green text and arrow image -->
+    <div class="arrow-container" onclick="document.querySelector('.chatbot-toggler').click()">
+        <div class="arrow-text">Click to query</div>
+        <img class="arrow-image" src="assets/images/arrow mark.png" alt="Arrow pointing to query">
+    </div>
+
     <button class="chatbot-toggler">
         <span class="material-symbols-rounded">mode_comment</span>
         <span class="material-symbols-outlined">close</span>
