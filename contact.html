@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Contact Us | Space Explorers</title>
     <style>
-        /* Your existing styles remain the same */
         body {
             background-color: #000d1f;
             color: white;
@@ -17,17 +16,15 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar styles */
         nav {
             display: flex;
-            justify-content: center; /* Center the logo */
-            padding: 1rem 0; /* Optional: Add some padding */
+            justify-content: center;
+            padding: 1rem 0;
         }
 
-        /* Form-related styles can go here */
         .contact-header {
             text-align: center;
-            padding: 0.5rem 0; /* Further reduced padding to decrease gap */
+            padding: 0.5rem 0;
         }
 
         .contact-header h1 {
@@ -51,6 +48,7 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             max-width: 600px;
             width: 100%;
+            text-align: center; /* Center the icons and text inside the form container */
         }
 
         .form-box input, .form-box textarea {
@@ -78,16 +76,34 @@
         .form-box button:hover {
             background-color: #0196a0;
         }
+
+        .contact-icons {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-icons a {
+            margin: 0 1rem;
+            color: white;
+            font-size: 2.5rem; /* Increase icon size */
+            transition: transform 0.3s ease; /* Add a smooth hover effect */
+        }
+
+        .contact-icons a:hover {
+            color: #01a9ac;
+            transform: scale(1.2); /* Scale the icon on hover */
+        }
+
         .footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; /* Stack items vertically */
-        text-align: center;
-        padding: 1rem;
-        background-color: #000d1f;
-        color: white;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem;
+            background-color: #000d1f;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -105,7 +121,7 @@
     <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="contact-form-container">
-            <form action="https://formspree.io/f/mbljryjl" method="POST"> <!-- Update with your Formspree ID -->
+            <form action="https://formspree.io/f/mbljryjl" method="POST">
                 <div class="form-box">
                     <input type="text" name="name" placeholder="Enter Your Name" required>
                 </div>
@@ -122,24 +138,23 @@
                     <button type="submit">Send Message</button>
                 </div>
             </form>
+
+            <!-- Contact Icons (Centered below the form) -->
+            <div class="contact-icons">
+                <a href="https://www.facebook.com/share/7QxoD7nyFJ79N38H/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/mourya200405?s=08" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/shaswat9692" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/monishr608?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </section>
 
-  Contact Icons -->
-   <div class="contact-icons">
-    <a href="https://www.facebook.com/share/7QxoD7nyFJ79N38H/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.twitter.com/yourTwitterUsername" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/shaswat9692" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/monishr608?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-</div>
-
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Stardust Innovaters. All Rights Reserved.</p>
-     
+        <p>&copy; 2024 Stardust Innovators. All Rights Reserved.</p>
     </footer>
 
     <!-- Link your JavaScript file -->
-    <script src="contact.js"></script> <!-- JS for additional features -->
+    <script src="contact.js"></script>
 </body>
 </html>
